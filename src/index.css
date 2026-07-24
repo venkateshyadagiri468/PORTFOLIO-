@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-dark: #0b132b;
+    --card-bg: rgba(15, 23, 42, 0.75);
+    --accent-indigo: #6366f1;
+    --accent-cyan: #06b6d4;
+  }
+  
+  body {
+    background-color: var(--bg-dark);
+    background-image: 
+      radial-gradient(at 10% 10%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+      radial-gradient(at 90% 20%, rgba(6, 182, 212, 0.15) 0px, transparent 50%),
+      radial-gradient(at 50% 80%, rgba(16, 185, 129, 0.10) 0px, transparent 50%),
+      radial-gradient(at 20% 90%, rgba(79, 70, 229, 0.15) 0px, transparent 50%);
+    background-attachment: fixed;
+    color: #f8fafc;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0b132b;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6366f1;
+}
+
+/* Glassmorphism card utilities */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-panel-hover {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-panel-hover:hover {
+  border-color: rgba(6, 182, 212, 0.5);
+  box-shadow: 0 12px 36px -10px rgba(6, 182, 212, 0.3);
+  transform: translateY(-4px);
+}
+
+/* Glowing text and borders */
+.glow-text {
+  text-shadow: 0 0 25px rgba(99, 102, 241, 0.6);
+}
+
+.glow-cyan-text {
+  text-shadow: 0 0 25px rgba(6, 182, 212, 0.6);
+}
+
+.glow-border {
+  box-shadow: 0 0 25px -5px rgba(99, 102, 241, 0.4);
+}
+
+/* Grid background animation overlay */
+.bg-grid-pattern {
+  background-size: 48px 48px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+/* Equalizer Bars Animation */
+@keyframes eqBar {
+  0% { height: 20%; }
+  50% { height: 100%; }
+  100% { height: 35%; }
+}
+
+.animate-eq-1 { animation: eqBar 1.1s ease-in-out infinite alternate; }
+.animate-eq-2 { animation: eqBar 0.8s ease-in-out infinite alternate 0.2s; }
+.animate-eq-3 { animation: eqBar 1.4s ease-in-out infinite alternate 0.4s; }
+.animate-eq-4 { animation: eqBar 0.9s ease-in-out infinite alternate 0.1s; }
+.animate-eq-5 { animation: eqBar 1.3s ease-in-out infinite alternate 0.3s; }
